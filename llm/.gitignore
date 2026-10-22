@@ -12,7 +12,6 @@ venv/
 .env.*
 
 # Generated data
-data/processed/
 data/vectorstore/
 
 # Editor and operating system files
