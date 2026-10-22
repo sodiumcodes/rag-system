@@ -1,0 +1,25 @@
+# LangChain core and integrations
+langchain
+langchain-core
+langchain-community
+langchain-text-splitters
+
+# Groq LLM for answer generation
+langchain-groq
+
+# OpenAI embeddings
+langchain-openai
+openai
+
+# Vector database
+chromadb
+langchain-chroma
+
+# Document loading
+pypdf
+docx2txt
+beautifulsoup4
+requests
+
+# Environment variable management
+python-dotenv
