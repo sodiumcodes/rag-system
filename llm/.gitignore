@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environment and local secrets
+.env
+.env.*
+
+# Generated data
+data/processed/
+data/vectorstore/
+
+# Editor and operating system files
+.DS_Store
+.vscode/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
