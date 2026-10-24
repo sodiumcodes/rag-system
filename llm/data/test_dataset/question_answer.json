@@ -5,59 +5,69 @@
     "Michael Munn",
     "David Pitman"
   ],
-  "purpose": "Ground-truth question-answer pairs for evaluating whether an LLM answers questions using the supplied source document accurately.",
-  "question_count": 60,
+  "purpose": "Ground-truth question-answer pairs for evaluating whether an LLM answers questions accurately using the supplied source document.",
+  "question_count": 10,
   "format_version": "1.0",
-  "notes": [
-    "Answers are paraphrased from the source rather than copied verbatim.",
-    "Use source_section as a traceability hint; section labels are not guaranteed to match printed page numbering.",
-    "For evaluation, compare semantic correctness and important caveats, not exact wording."
-  ],
   "questions": [
     {
-      "category": "Foundations",
-      "question": "Why did explainability become a distinct, renewed area of research in the mid-2010s?",
-      "answer": "As complex machine-learning models became highly capable, people increasingly asked how their predictions were produced. This demand helped revive explainability as a distinct research field and increased interest in methods for understanding model behavior."
+      "category": "Explanation Types",
+      "source_section": "Chapter 1 — What Are Explanations?",
+      "question": "What is the difference between an attribution-based explanation and a counterfactual explanation?",
+      "answer": "An attribution-based explanation identifies features that influence a model's prediction and describes their contribution to the result. For example, a weather model might associate a rain prediction with cloud cover and humidity. A counterfactual explanation instead presents a plausible alternative scenario that contrasts with the original outcome. It helps illustrate how a different situation might relate to a different prediction. The two approaches offer different perspectives: attribution highlights influential properties, while counterfactuals help people understand alternative possibilities without automatically establishing causal relationships."
     },
     {
-      "category": "Audiences",
-      "question": "What limitation of many current XAI methods does the book highlight regarding user interaction?",
-      "answer": "Many methods provide a one-way explanation rather than a two-way conversation. Users generally cannot ask follow-up questions directly; they may need to change explanation parameters or try another technique to obtain more information."
+      "category": "Causality",
+      "source_section": "Chapter 1 — What Are Explanations?",
+      "question": "Why should feature attribution not automatically be interpreted as evidence of causation?",
+      "answer": "Feature attribution estimates how a feature influences a model's prediction according to a particular explanation method. This does not establish that the feature causes the predicted outcome in the real world. The book emphasizes that identifying causal relationships from data-focused explanations is extremely difficult, and practical explainability techniques do not provide strong general guarantees of causal validity. Even an apparently convincing relationship can have exceptions or depend on other variables. When causal relationships are the actual objective, the authors recommend exploring interpretable causal models rather than treating attribution results as proof."
+    },
+    {
+      "category": "Pre-modeling Explainability",
+      "source_section": "Chapter 1 — Pre-modeling Explainability",
+      "question": "What is pre-modeling explainability, and why is exploratory data analysis important to it?",
+      "answer": "Pre-modeling explainability focuses on understanding the dataset and engineered features before training a machine-learning model. Exploratory data analysis, or EDA, uses statistical summaries and visualizations to examine properties such as means, standard deviations, ranges, missing values, dimensionality, and outliers. These observations help practitioners understand data quality and distributions that may affect subsequent predictions. Multivariate analysis can additionally reveal relationships between features and targets, including correlations that suggest opportunities to simplify the feature space. This early investigation can expose potential biases and improve later interpretation of model behavior."
     },
     {
       "category": "Model Scope",
-      "question": "What are post-hoc explanation methods?",
-      "answer": "Post-hoc methods explain a model after it has been trained. They use the trained model and its predictions to produce explanations, rather than requiring the explanation to be built directly into the model during training."
+      "source_section": "Chapter 1 — Intrinsic vs. Post-Hoc Explainability",
+      "question": "How do intrinsic and post-hoc explanations differ, and why does the distinction matter?",
+      "answer": "Intrinsic explanations are part of the model's prediction process itself, generally requiring an interpretable model or modifications that make its behavior understandable. Post-hoc explanations are generated after training by examining a trained model and its predictions. They are often more portable because they can be separated from the model's architecture. However, an interface returning a prediction and explanation together does not necessarily provide an intrinsic explanation; it may generate the prediction first and then calculate an explanation. Understanding this distinction helps practitioners correctly describe how their explanation method operates."
     },
     {
-      "category": "Explanation Types",
-      "question": "What is an example-based or similarity explanation?",
-      "answer": "It explains a prediction by presenting another, analogous example from the data. The explanation may also describe similarities and differences between the examples or how the model treated them."
+      "category": "Model Scope",
+      "source_section": "Chapter 1 — Intrinsic vs. Post-Hoc Explainability",
+      "question": "What distinguishes model-agnostic explainability techniques from model-specific techniques?",
+      "answer": "Model-agnostic techniques do not depend on a model's particular architecture or an inherent internal property, allowing them to be applied across different model types and scenarios. They commonly investigate changes in inputs, compare predictions, or run simulations to infer model behavior. Model-specific techniques instead use characteristics of a particular architecture, such as internal decision nodes in a tree-based model. These categories are not equivalent to interpretable versus opaque models: an opaque neural network can have model-specific explanations, while an interpretable linear model can be explained using a model-agnostic technique such as Shapley values."
+    },
+    {
+      "category": "Explanation Scope",
+      "source_section": "Chapter 1 — Local, Cohort, and Global Explanations",
+      "question": "What are local, cohort, and global explanations, and when is each useful?",
+      "answer": "A local explanation describes a single prediction, helping someone understand a particular decision or outcome. A cohort explanation examines a subset of predictions and can be used to compare groups, revealing differences that may otherwise remain hidden. A global explanation summarizes the model's overall behavior across a broader collection of predictions and is useful for stakeholders, regulators, and model comparisons. These scopes are not interchangeable. In particular, a global summary does not guarantee how the model will behave on an individual or on previously unseen inputs after deployment."
+    },
+    {
+      "category": "Fairness and Evaluation",
+      "source_section": "Chapter 1 — Local, Cohort, and Global Explanations",
+      "question": "How can cohort explanations help investigate potential unfairness in a machine-learning model?",
+      "answer": "Cohort explanations allow practitioners to compare model behavior across different subsets of predictions. For example, they can examine whether a loan approval model behaves differently for groups of applicants and investigate whether the differences reflect relevant financial information or potentially inappropriate patterns learned from historical data. Such comparisons can reveal issues that a global explanation might obscure. However, explainability and fairness are distinct areas, even though they share related foundations. Observing differences between groups is a useful starting point for investigation, not by itself proof that a model is fair or unfair."
     },
     {
       "category": "Feature Attribution",
-      "question": "Why are gradient-based techniques especially common in image explainability?",
-      "answer": "They can use gradients with respect to pixels to identify image regions that influence a prediction. Those pixel-level attributions can be combined into masks or overlays that make influential regions easier to inspect."
+      "source_section": "Chapter 1 — Feature Attributions",
+      "question": "What does a feature attribution represent, and how can its value be interpreted?",
+      "answer": "A feature attribution represents the influence of a feature on a model's prediction, with its value interpreted according to the chosen technique. Attributions can be absolute, expressing a contribution in terms of the prediction's value, or relative, describing influence compared with other features. A large attribution does not necessarily mean that a feature is inherently good or that it improves prediction accuracy; its interpretation depends on the model, task, and method. The book also emphasizes that different attribution techniques can assign substantially different values to the same features, so method selection matters."
     },
     {
-      "category": "Interpretation",
-      "question": "Why might an explanation need to include a counterfactual in addition to describing the actual prediction?",
-      "answer": "A counterfactual can make the explanation more actionable by showing a plausible alternative condition under which the outcome might change. For example, it may clarify which aspects of an application would need to differ for a loan to be more likely to be approved."
+      "category": "Shapley Values",
+      "source_section": "Chapter 1 — Sampled Shapley Technique and Baselines",
+      "question": "Why are sampled Shapley methods used, and what trade-offs do they introduce?",
+      "answer": "Calculating exact Shapley values can require predictions for an enormous number of feature combinations, making exhaustive computation impractical for many datasets. Sampled Shapley methods reduce this cost by approximating the relevant paths or coalitions, for example through random sampling and averaging. The resulting attributions are estimates rather than necessarily exact values, and approximation error may mean that they do not sum precisely to the prediction. Increasing the number of sampled paths can reduce error but increases runtime. Practitioners must therefore balance computational expense against the precision needed for their application."
     },
     {
-      "category": "Evaluation & Limitations",
-      "question": "Does a post-hoc explanation necessarily describe the model's true internal reasoning perfectly?",
-      "answer": "No. Post-hoc explanations are produced by a separate technique and may approximate or summarize behavior. Their reliability depends on the method, assumptions, and context, so they should not automatically be treated as a perfect account of internal reasoning."
-    },
-    {
-      "category": "Applied Scenarios",
-      "question": "A user asks why a prediction changed after one input value was modified. Which general kind of explanation is most directly relevant?",
-      "answer": "A local explanation focused on the particular instance and its input features is most directly relevant. Comparing feature attributions before and after the change may help, while care is needed not to infer causality from attribution differences alone."
-    },
-    {
-      "category": "Synthesis",
-      "question": "Summarize a practical workflow for choosing and using an XAI method based on the book's guidance.",
-      "answer": "First identify the audience, the question to be answered, and the action that may follow. Examine the data before modeling, including feature distributions and correlations. Select a method whose scope and output fit the need—for example, local explanations for individual decisions or global explanations for stakeholders. Interpret the result according to the method's assumptions, and do not mistake attribution for causality or a guarantee of fairness or correctness."
+      "category": "Gradient-based Explainability",
+      "source_section": "Chapter 1 — Gradient-based Techniques",
+      "question": "How do gradient-based explainability techniques reveal the influence of model inputs?",
+      "answer": "Gradient-based techniques examine how a model's output changes with respect to its input features. A gradient indicates the direction of steepest increase in a function and provides information about local changes in the prediction when inputs change. Explainability methods use this information to estimate feature influence. For image models, the input can be varied along a path from a baseline image to the original image, allowing attribution values to be calculated for individual pixels and sometimes grouped into regions. These techniques are particularly useful for differentiable models but depend on access to gradients and appropriate methodological choices."
     }
   ]
 }
