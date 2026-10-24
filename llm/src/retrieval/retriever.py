@@ -26,6 +26,10 @@ class DocumentRetriever :
         # Initialize the same embedding model used during indexing
         self.embed_func = OpenRouterEmbeddings(EMBEDDING_MODEL)
 
+        # This initializes the BM25 cache so hybrid retrieval can run correctly.
+        self._bm25 = None
+        self._bm25_documents = []
+
     # since we have different searching mechanisms, we will use a helper function to format the output, so that all outputs are of the same format
     def format_output (self, results: dict) -> list[dict]:
         #* Why [[]] instead of []? 
