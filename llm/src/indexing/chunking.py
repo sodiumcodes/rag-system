@@ -8,7 +8,7 @@ def clean_documents(
 
     cleaned_documents = []
 
-    for doc in documents:
+    for doc in documents[4:73]:
         text = doc.page_content
 
         # Replace tabs and non-breaking spaces with normal spaces.
@@ -44,7 +44,7 @@ def chunk_documents(
     chunk_size: int,
     chunk_overlap: int
 ) -> list[Document]:
-        
+
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=chunk_size,  #Maximum number of characters in each chunk
         chunk_overlap=chunk_overlap,  #Number of characters shared between consecutive chunks
