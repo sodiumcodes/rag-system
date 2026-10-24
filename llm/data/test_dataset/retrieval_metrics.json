@@ -1,0 +1,29 @@
+{
+    "hybrid": {
+        "question_count": 10,
+        "precision_at_k": 0.5,
+        "precision_among_returned": 0.5,
+        "mrr_at_k": 0.9333,
+        "average_execution_time_ms": 992.56,
+        "average_chunks_returned": 5,
+        "empty_result_count": 0
+    },
+    "similarity": {
+        "question_count": 10,
+        "precision_at_k": 0.74,
+        "precision_among_returned": 0.74,
+        "mrr_at_k": 1.0,
+        "average_execution_time_ms": 1011.84,
+        "average_chunks_returned": 5,
+        "empty_result_count": 0
+    },
+    "threshold": {
+        "question_count": 10,
+        "precision_at_k": 0.18,
+        "precision_among_returned": 0.6333,
+        "mrr_at_k": 0.7,
+        "average_execution_time_ms": 979.76,
+        "average_chunks_returned": 1.1,
+        "empty_result_count": 3
+    }
+}
