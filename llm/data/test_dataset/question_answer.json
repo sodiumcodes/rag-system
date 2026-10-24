@@ -1,0 +1,63 @@
+{
+  "dataset_name": "Explainable AI for Practitioners — LLM Accuracy Evaluation",
+  "source_document": "Explainable-AI-for-Practitioners.pdf",
+  "source_authors": [
+    "Michael Munn",
+    "David Pitman"
+  ],
+  "purpose": "Ground-truth question-answer pairs for evaluating whether an LLM answers questions using the supplied source document accurately.",
+  "question_count": 60,
+  "format_version": "1.0",
+  "notes": [
+    "Answers are paraphrased from the source rather than copied verbatim.",
+    "Use source_section as a traceability hint; section labels are not guaranteed to match printed page numbering.",
+    "For evaluation, compare semantic correctness and important caveats, not exact wording."
+  ],
+  "questions": [
+    {
+      "category": "Foundations",
+      "question": "Why did explainability become a distinct, renewed area of research in the mid-2010s?",
+      "answer": "As complex machine-learning models became highly capable, people increasingly asked how their predictions were produced. This demand helped revive explainability as a distinct research field and increased interest in methods for understanding model behavior."
+    },
+    {
+      "category": "Audiences",
+      "question": "What limitation of many current XAI methods does the book highlight regarding user interaction?",
+      "answer": "Many methods provide a one-way explanation rather than a two-way conversation. Users generally cannot ask follow-up questions directly; they may need to change explanation parameters or try another technique to obtain more information."
+    },
+    {
+      "category": "Model Scope",
+      "question": "What are post-hoc explanation methods?",
+      "answer": "Post-hoc methods explain a model after it has been trained. They use the trained model and its predictions to produce explanations, rather than requiring the explanation to be built directly into the model during training."
+    },
+    {
+      "category": "Explanation Types",
+      "question": "What is an example-based or similarity explanation?",
+      "answer": "It explains a prediction by presenting another, analogous example from the data. The explanation may also describe similarities and differences between the examples or how the model treated them."
+    },
+    {
+      "category": "Feature Attribution",
+      "question": "Why are gradient-based techniques especially common in image explainability?",
+      "answer": "They can use gradients with respect to pixels to identify image regions that influence a prediction. Those pixel-level attributions can be combined into masks or overlays that make influential regions easier to inspect."
+    },
+    {
+      "category": "Interpretation",
+      "question": "Why might an explanation need to include a counterfactual in addition to describing the actual prediction?",
+      "answer": "A counterfactual can make the explanation more actionable by showing a plausible alternative condition under which the outcome might change. For example, it may clarify which aspects of an application would need to differ for a loan to be more likely to be approved."
+    },
+    {
+      "category": "Evaluation & Limitations",
+      "question": "Does a post-hoc explanation necessarily describe the model's true internal reasoning perfectly?",
+      "answer": "No. Post-hoc explanations are produced by a separate technique and may approximate or summarize behavior. Their reliability depends on the method, assumptions, and context, so they should not automatically be treated as a perfect account of internal reasoning."
+    },
+    {
+      "category": "Applied Scenarios",
+      "question": "A user asks why a prediction changed after one input value was modified. Which general kind of explanation is most directly relevant?",
+      "answer": "A local explanation focused on the particular instance and its input features is most directly relevant. Comparing feature attributions before and after the change may help, while care is needed not to infer causality from attribution differences alone."
+    },
+    {
+      "category": "Synthesis",
+      "question": "Summarize a practical workflow for choosing and using an XAI method based on the book's guidance.",
+      "answer": "First identify the audience, the question to be answered, and the action that may follow. Examine the data before modeling, including feature distributions and correlations. Select a method whose scope and output fit the need—for example, local explanations for individual decisions or global explanations for stakeholders. Interpret the result according to the method's assumptions, and do not mistake attribution for causality or a guarantee of fairness or correctness."
+    }
+  ]
+}

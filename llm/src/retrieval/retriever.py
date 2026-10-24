@@ -73,7 +73,6 @@ class DocumentRetriever :
         )     
         return self.format_output(results= results) 
 
-    
     # searching 2 : Similarity Search with a Distance Threshold
     def threshold_search(
         self, query:str, top_k:int = 5, max_distance: float = 0.7 
