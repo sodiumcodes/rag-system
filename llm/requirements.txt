@@ -21,3 +21,8 @@ requests
 
 # Environment variable management
 dotenv
+
+# Keyword-search algorithm
+rank-bm25
+
+numpy

@@ -1,13 +1,12 @@
 import os
-from pathlib import Path
 import requests
+from pathlib import Path
 from dotenv import load_dotenv
 from langchain_core.embeddings import Embeddings
 from langchain_core.documents import Document
 from langchain_chroma import Chroma
-
-ROOT = Path(__file__).resolve().parents[3]
-load_dotenv(ROOT / ".env")
+from llm.src.config import PROJECT_ROOT
+load_dotenv(PROJECT_ROOT / ".env")
 
 class OpenRouterEmbeddings(Embeddings):
     """Generate embeddings through OpenRouter's hosted API."""
@@ -117,7 +116,7 @@ class DocumentIndexer:
         self.vector_store = Chroma(
             collection_name=collection_name,
             embedding_function=self.embeddings,
-            persist_directory=str(ROOT / "llm" / "data" / "vectorstore"),
+            persist_directory=str(PROJECT_ROOT / "llm" / "data" / "vectorstore"),
         )
 
     def index_documents(self, documents: list[Document]) -> int:
