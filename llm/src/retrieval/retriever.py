@@ -79,7 +79,7 @@ class DocumentRetriever :
 
     # searching 2 : Similarity Search with a Distance Threshold
     def threshold_search(
-        self, query:str, top_k:int = 5, max_distance: float = 0.7 
+        self, query:str, top_k:int = 5, max_distance: float = 0.5 
     ) -> list[dict] :
         """Return only dense-search results within the distance cutoff."""
 
