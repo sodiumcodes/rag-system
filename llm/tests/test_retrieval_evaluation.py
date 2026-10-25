@@ -2,6 +2,7 @@ import json
 import time
 from llm.src.config import PROJECT_ROOT
 from llm.src.retrieval.retriever import DocumentRetriever
+from llm.src.tools.search_tool import get_retriever
 
 DATASET_PATH = (
     PROJECT_ROOT
@@ -172,7 +173,7 @@ def evaluate_method(
 
 def main() -> None:
     questions = load_dataset()
-    retriever = DocumentRetriever()
+    retriever = get_retriever()
 
     methods = ["similarity", "threshold", "hybrid"]
     evaluation_results = []

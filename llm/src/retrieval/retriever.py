@@ -1,7 +1,6 @@
 # import statements
 from pathlib import Path
 import chromadb
-import numpy as np
 from llm.src.config import EMBEDDING_MODEL, PROJECT_ROOT, COLLECTION_NAME, CHROMA_DIR
 from llm.src.indexing.indexer import OpenRouterEmbeddings
 from rank_bm25 import BM25Okapi

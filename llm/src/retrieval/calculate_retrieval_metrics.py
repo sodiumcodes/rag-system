@@ -34,7 +34,6 @@ K = 5
 def precision_at_k(chunks: list[dict], k: int = K) -> float:
     """Calculate Precision@K: relevant chunks divided by K."""
 
-    # K must be positive; otherwise, the metric is undefined.
     if k <= 0:
         raise ValueError("k must be greater than 0")
 
@@ -116,8 +115,7 @@ def reciprocal_rank(chunks: list[dict], k: int = K) -> float:
     # Enumerate the top K chunks with ranks starting from 1.
     for rank, chunk in enumerate(chunks[:k], start=1):
 
-        # Stop at the first relevant chunk because MRR considers
-        # the rank of the earliest relevant result.
+        # Stop at the first relevant chunk because MRR considers the rank of the earliest relevant result.
         if chunk.get("is_relevant", False):
 
             # A relevant chunk at rank 1 gives 1.0;

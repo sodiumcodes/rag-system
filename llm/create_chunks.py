@@ -21,7 +21,7 @@ import json
 import sys
 from pathlib import Path
 from typing import Any
-
+from llm.src.tools.search_tool import get_retriever
 
 def json_safe(value: Any) -> Any:
     """Convert common non-JSON values into JSON-safe values."""
@@ -88,8 +88,6 @@ def main() -> None:
     if str(project_root) not in sys.path:
         sys.path.insert(0, str(project_root))
 
-    from llm.src.retrieval.retriever import DocumentRetriever
-
     with dataset_path.open("r", encoding="utf-8") as file:
         dataset = json.load(file)
 
@@ -110,7 +108,7 @@ def main() -> None:
     print(f"Questions found: {len(questions)}")
     print(f"Candidates per question: up to {args.top_k}\n")
 
-    retriever = DocumentRetriever()
+    retriever = get_retriever()
     review_questions = []
     skipped = 0
 
