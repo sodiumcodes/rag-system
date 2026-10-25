@@ -128,7 +128,11 @@ def main() -> None:
             skipped += 1
             continue
 
-        retrieved = retriever.similarity_search(
+        # retrieved = retriever.similarity_search(
+        #     query=question,
+        #     top_k=args.top_k,
+        # )
+        retrieved = retriever.hybrid_search(
             query=question,
             top_k=args.top_k,
         )

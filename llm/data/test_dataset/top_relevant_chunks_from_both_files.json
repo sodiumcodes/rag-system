@@ -1,0 +1,1022 @@
+{
+  "dataset_name": "Explainable AI for Practitioners — LLM Accuracy Evaluation",
+  "source_document": "Explainable-AI-for-Practitioners.pdf",
+  "purpose": "Curated question-specific ground-truth evidence chunks selected by comparing hybrid-search and similarity-search results.",
+  "selection_policy": {
+    "maximum_chunks_per_question": 5,
+    "included_chunks": "Only chunks judged relevant to answering the corresponding question",
+    "excluded_chunks": "All irrelevant, tangential, redundant, or weakly related candidates",
+    "ranking": "Selection rank reflects question-specific usefulness, not retrieval rank alone"
+  },
+  "question_count": 10,
+  "total_selected_chunks": 39,
+  "questions": [
+    {
+      "question_id": 1,
+      "category": "Explanation Types",
+      "question": "What is the difference between an attribution-based explanation and a counterfactual explanation?",
+      "answer": "An attribution-based explanation identifies features that influence a model's prediction and describes their contribution to the result. For example, a weather model might associate a rain prediction with cloud cover and humidity. A counterfactual explanation instead presents a plausible alternative scenario that contrasts with the original outcome. It helps illustrate how a different situation might relate to a different prediction. The two approaches offer different perspectives: attribution highlights influential properties, while counterfactuals help people understand alternative possibilities without automatically establishing causal relationships.",
+      "relevant_chunk_ids": [
+        "Explainable-AI-for-Practitioners_page_10_chunk_28",
+        "Explainable-AI-for-Practitioners_page_11_chunk_29",
+        "Explainable-AI-for-Practitioners_page_5_chunk_4",
+        "Explainable-AI-for-Practitioners_page_5_chunk_5",
+        "Explainable-AI-for-Practitioners_page_11_chunk_31"
+      ],
+      "candidate_chunks": [
+        {
+          "rank": 1,
+          "id": "Explainable-AI-for-Practitioners_page_10_chunk_28",
+          "text": "and history of on-time loan payments. Although Explainability and Fairness share many of the same\nunderpinnings, how to apply and understand Fairness, as well as the techniques themselves, are\nsufficiently distinct from Explainability that we do not cover them in this book.\nAttributions, Counterfactual, and Example-based\nExplanations can come in many forms depending on the type of information they use to convey an\nunderstanding of the model. When asked, many of us think of attribution-based explanations that are\nfocused on highlighting relevant properties of the system, e.g., “It is raining because there are clouds in\nthe sky.” In this case, the clouds are an attribute of the sky, a feature in our weather model. Proponents\nand opponents are part of counter-factual explanations, which humans often find more satisfying than",
+          "metadata": {
+            "page": 10,
+            "total_pages": 74,
+            "source": "D:\\projects\\rag-system\\llm\\data\\raw\\Explainable-AI-for-Practitioners.pdf",
+            "creator": "calibre 2.55.0 [http://calibre-ebook.com]",
+            "creationdate": "2023-02-11T09:02:57+00:00",
+            "start_index": 2727,
+            "author": "Michael Munn & David Pitman",
+            "title": "Explainable AI for Practitioners",
+            "page_label": "11",
+            "producer": "3-Heights(TM) PDF Optimization Shell 5.9.1.5 (http://www.pdf-tools.com)",
+            "moddate": "2023-02-11T10:04:57+01:00"
+          },
+          "distance": 0.7297707796096802,
+          "is_relevant": true,
+          "selected_reason": "Directly supports the question or provides necessary, question-specific supporting evidence.",
+          "selection_rank": 1
+        },
+        {
+          "rank": 3,
+          "id": "Explainable-AI-for-Practitioners_page_11_chunk_29",
+          "text": "pure attribution-based explanations. Earlier when we said it was raining because of clouds, we could\nhave also explained this by providing a counter-factual explanation: “It does not rain when it is sunny.”\nIn this type of explanation, “clouds” would be the proponent of our counterfactual explanation, while\nsunny is the opponent to our explanation. Counterfactuals are often portrayed as negations (e.g., “it does\nnot rain when it is sunny”) but this is not a requirement of counterfactual explanations. We could have\njust as easily found a counterfactual to a weather prediction for cold weather with the counterfactual “It\nis hot when it is sunny.” Finding, and understanding the causes behind proponents and opponents can be\ndifficult depending on the modality of the dataset. An opponent value that is negative in a structured\ndataset is much easier to comprehend than why a texture in an image is considered an opponent by the\nmodel.",
+          "metadata": {
+            "start_index": 0,
+            "title": "Explainable AI for Practitioners",
+            "page_label": "12",
+            "moddate": "2023-02-11T10:04:57+01:00",
+            "page": 11,
+            "author": "Michael Munn & David Pitman",
+            "source": "D:\\projects\\rag-system\\llm\\data\\raw\\Explainable-AI-for-Practitioners.pdf",
+            "creator": "calibre 2.55.0 [http://calibre-ebook.com]",
+            "creationdate": "2023-02-11T09:02:57+00:00",
+            "total_pages": 74,
+            "producer": "3-Heights(TM) PDF Optimization Shell 5.9.1.5 (http://www.pdf-tools.com)"
+          },
+          "distance": 0.9344515800476074,
+          "is_relevant": true,
+          "selected_reason": "Directly supports the question or provides necessary, question-specific supporting evidence.",
+          "selection_rank": 2
+        },
+        {
+          "rank": 2,
+          "id": "Explainable-AI-for-Practitioners_page_5_chunk_4",
+          "text": "What Are Explanations?\nWhen a model makes a prediction, Explainable AI methods generate an explanation that gives insight\ninto the model’s behavior as it arrived at that prediction. When we seek explanations, we are trying to\nunderstand “why did X happen?” Figuring out this “Why” can help us build a better comprehension of\nwhat influences a model, how that influence occurs, and where the model performs (or fails). As part of\nbuilding our own mental models, we often find a pure explanation to be unsatisfactory, so we are also\ninterested in explanations which provide a counterfactual, or foil, to the original situation.\nCounterfactuals are scenarios which seek to provide an opposing, plausible, scenario of why X did not\nhappen. If we are seeking to explain “why did it rain today?” we may also try to find the counterfactual\nexplanation for “why did it not rain today [in a hypothetical world]?” While our primary explanation for",
+          "metadata": {
+            "moddate": "2023-02-11T10:04:57+01:00",
+            "author": "Michael Munn & David Pitman",
+            "creationdate": "2023-02-11T09:02:57+00:00",
+            "source": "D:\\projects\\rag-system\\llm\\data\\raw\\Explainable-AI-for-Practitioners.pdf",
+            "creator": "calibre 2.55.0 [http://calibre-ebook.com]",
+            "start_index": 0,
+            "page": 5,
+            "title": "Explainable AI for Practitioners",
+            "total_pages": 74,
+            "page_label": "6",
+            "producer": "3-Heights(TM) PDF Optimization Shell 5.9.1.5 (http://www.pdf-tools.com)"
+          },
+          "distance": 0.8711386322975159,
+          "is_relevant": true,
+          "selected_reason": "Directly supports the question or provides necessary, question-specific supporting evidence.",
+          "selection_rank": 3
+        },
+        {
+          "rank": 9,
+          "id": "Explainable-AI-for-Practitioners_page_5_chunk_5",
+          "text": "why it rained might include temperature, barometric pressure, and humidity, it may be easier to explain\nthat it did not rain because there were no clouds in the sky, implying that clouds are part of an\nexplanation for why it does rain.\nWe also often seek explanations that are causal, or in the form of “X was predicted because of Y.” These\nexplanations are attractive because they give an immediate sense of what a counterfactual prediction\nwould be: remove X and presumably the prediction will no longer be Y. It certainly sounds more\ndefinitive to say “it rains because there are clouds in the sky.” However, this is not always true; rain can\noccur even with clear skies in some circumstances. Establishing causality with data-focused\nexplanations is extremely difficult (even for time-series data), and no explainability techniques have\nbeen proposed that are both useful in practice and have a high level of guarantee in their analysis.",
+          "metadata": {
+            "title": "Explainable AI for Practitioners",
+            "moddate": "2023-02-11T10:04:57+01:00",
+            "page": 5,
+            "creator": "calibre 2.55.0 [http://calibre-ebook.com]",
+            "author": "Michael Munn & David Pitman",
+            "source": "D:\\projects\\rag-system\\llm\\data\\raw\\Explainable-AI-for-Practitioners.pdf",
+            "creationdate": "2023-02-11T09:02:57+00:00",
+            "start_index": 938,
+            "total_pages": 74,
+            "producer": "3-Heights(TM) PDF Optimization Shell 5.9.1.5 (http://www.pdf-tools.com)",
+            "page_label": "6"
+          },
+          "distance": 1.258608102798462,
+          "is_relevant": true,
+          "selected_reason": "Directly supports the question or provides necessary, question-specific supporting evidence.",
+          "selection_rank": 4
+        },
+        {
+          "rank": 5,
+          "id": "Explainable-AI-for-Practitioners_page_11_chunk_31",
+          "text": "an overview of some common themes that have been introduced and further developed the field.\nFeature Attributions\nFeature attribution methods are common throughout Explainable AI. What does it mean to attribute a\nprediction to an individual feature in your dataset? Formally, a feature attribution represents the\ninfluence of that feature (and its value for a local explanation) on the prediction. Feature attributions can\nbe absolute, for example if a predicted temperature is 24° C, a feature could be attributed 8° C of that\npredicted value, or even a negative value like -12° C. Feature attributions can also be relative,\nrepresenting a percentage of influence compared to other features used by the model.\nNOTE\nIn this book, we often describe features as influencing a model, while the specific amount of influence is the attribution. In\npractice, “feature influence” and “feature attribution” are often used interchangeably.",
+          "metadata": {
+            "producer": "3-Heights(TM) PDF Optimization Shell 5.9.1.5 (http://www.pdf-tools.com)",
+            "creator": "calibre 2.55.0 [http://calibre-ebook.com]",
+            "title": "Explainable AI for Practitioners",
+            "start_index": 1886,
+            "moddate": "2023-02-11T10:04:57+01:00",
+            "page": 11,
+            "total_pages": 74,
+            "source": "D:\\projects\\rag-system\\llm\\data\\raw\\Explainable-AI-for-Practitioners.pdf",
+            "creationdate": "2023-02-11T09:02:57+00:00",
+            "page_label": "12",
+            "author": "Michael Munn & David Pitman"
+          },
+          "distance": 1.1178309917449951,
+          "is_relevant": true,
+          "selected_reason": "Directly supports the question or provides necessary, question-specific supporting evidence.",
+          "selection_rank": 5
+        }
+      ],
+      "review_instruction": "Contains only manually selected relevant chunks from the hybrid-search and similarity-search candidate sets. All included chunks are labeled is_relevant=true; no false or unreviewed candidates are included."
+    },
+    {
+      "question_id": 2,
+      "category": "Causality",
+      "question": "Why should feature attribution not automatically be interpreted as evidence of causation?",
+      "answer": "Feature attribution estimates how a feature influences a model's prediction according to a particular explanation method. This does not establish that the feature causes the predicted outcome in the real world. The book emphasizes that identifying causal relationships from data-focused explanations is extremely difficult, and practical explainability techniques do not provide strong general guarantees of causal validity. Even an apparently convincing relationship can have exceptions or depend on other variables. When causal relationships are the actual objective, the authors recommend exploring interpretable causal models rather than treating attribution results as proof.",
+      "relevant_chunk_ids": [
+        "Explainable-AI-for-Practitioners_page_5_chunk_5",
+        "Explainable-AI-for-Practitioners_page_11_chunk_31"
+      ],
+      "candidate_chunks": [
+        {
+          "rank": 3,
+          "id": "Explainable-AI-for-Practitioners_page_5_chunk_5",
+          "text": "why it rained might include temperature, barometric pressure, and humidity, it may be easier to explain\nthat it did not rain because there were no clouds in the sky, implying that clouds are part of an\nexplanation for why it does rain.\nWe also often seek explanations that are causal, or in the form of “X was predicted because of Y.” These\nexplanations are attractive because they give an immediate sense of what a counterfactual prediction\nwould be: remove X and presumably the prediction will no longer be Y. It certainly sounds more\ndefinitive to say “it rains because there are clouds in the sky.” However, this is not always true; rain can\noccur even with clear skies in some circumstances. Establishing causality with data-focused\nexplanations is extremely difficult (even for time-series data), and no explainability techniques have\nbeen proposed that are both useful in practice and have a high level of guarantee in their analysis.",
+          "metadata": {
+            "creationdate": "2023-02-11T09:02:57+00:00",
+            "title": "Explainable AI for Practitioners",
+            "producer": "3-Heights(TM) PDF Optimization Shell 5.9.1.5 (http://www.pdf-tools.com)",
+            "moddate": "2023-02-11T10:04:57+01:00",
+            "page_label": "6",
+            "start_index": 938,
+            "page": 5,
+            "author": "Michael Munn & David Pitman",
+            "total_pages": 74,
+            "source": "D:\\projects\\rag-system\\llm\\data\\raw\\Explainable-AI-for-Practitioners.pdf",
+            "creator": "calibre 2.55.0 [http://calibre-ebook.com]"
+          },
+          "distance": 1.141829252243042,
+          "is_relevant": true,
+          "selected_reason": "Directly supports the question or provides necessary, question-specific supporting evidence.",
+          "selection_rank": 1
+        },
+        {
+          "rank": 1,
+          "id": "Explainable-AI-for-Practitioners_page_11_chunk_31",
+          "text": "an overview of some common themes that have been introduced and further developed the field.\nFeature Attributions\nFeature attribution methods are common throughout Explainable AI. What does it mean to attribute a\nprediction to an individual feature in your dataset? Formally, a feature attribution represents the\ninfluence of that feature (and its value for a local explanation) on the prediction. Feature attributions can\nbe absolute, for example if a predicted temperature is 24° C, a feature could be attributed 8° C of that\npredicted value, or even a negative value like -12° C. Feature attributions can also be relative,\nrepresenting a percentage of influence compared to other features used by the model.\nNOTE\nIn this book, we often describe features as influencing a model, while the specific amount of influence is the attribution. In\npractice, “feature influence” and “feature attribution” are often used interchangeably.",
+          "metadata": {
+            "page_label": "12",
+            "producer": "3-Heights(TM) PDF Optimization Shell 5.9.1.5 (http://www.pdf-tools.com)",
+            "creator": "calibre 2.55.0 [http://calibre-ebook.com]",
+            "source": "D:\\projects\\rag-system\\llm\\data\\raw\\Explainable-AI-for-Practitioners.pdf",
+            "author": "Michael Munn & David Pitman",
+            "start_index": 1886,
+            "creationdate": "2023-02-11T09:02:57+00:00",
+            "title": "Explainable AI for Practitioners",
+            "moddate": "2023-02-11T10:04:57+01:00",
+            "page": 11,
+            "total_pages": 74
+          },
+          "distance": 1.0447582006454468,
+          "is_relevant": true,
+          "selected_reason": "Directly supports the question or provides necessary, question-specific supporting evidence.",
+          "selection_rank": 2
+        }
+      ],
+      "review_instruction": "Contains only manually selected relevant chunks from the hybrid-search and similarity-search candidate sets. All included chunks are labeled is_relevant=true; no false or unreviewed candidates are included."
+    },
+    {
+      "question_id": 3,
+      "category": "Pre-modeling Explainability",
+      "question": "What is pre-modeling explainability, and why is exploratory data analysis important to it?",
+      "answer": "Pre-modeling explainability focuses on understanding the dataset and engineered features before training a machine-learning model. Exploratory data analysis, or EDA, uses statistical summaries and visualizations to examine properties such as means, standard deviations, ranges, missing values, dimensionality, and outliers. These observations help practitioners understand data quality and distributions that may affect subsequent predictions. Multivariate analysis can additionally reveal relationships between features and targets, including correlations that suggest opportunities to simplify the feature space. This early investigation can expose potential biases and improve later interpretation of model behavior.",
+      "relevant_chunk_ids": [
+        "Explainable-AI-for-Practitioners_page_8_chunk_18",
+        "Explainable-AI-for-Practitioners_page_8_chunk_19",
+        "Explainable-AI-for-Practitioners_page_8_chunk_16",
+        "Explainable-AI-for-Practitioners_page_8_chunk_17"
+      ],
+      "candidate_chunks": [
+        {
+          "rank": 5,
+          "id": "Explainable-AI-for-Practitioners_page_8_chunk_18",
+          "text": "briefly discuss here commonly used pre-modeling explainability techniques.\nExplanations that focus solely on the dataset are often referred to as Exploratory Data Analysis (EDA).\nEDA is a collection of statistical techniques and visualizations that are used to gain more insight into a\ndataset. There are many techniques for summarizing and visualizing datasets and there are quite a few\nuseful tools that are commonly used such as Know Your Data, Pandas Profiling, and Facets. These tools\nallow you to quickly get a sense of the statistical properties of the features in your dataset such as the\nmean, standard deviation, range, and percentage of missing samples as well as the feature\ndimensionality and presence of any outliers. From the perspective of explainability, this knowledge of\nthe data distribution and data quality is important for understanding model behavior, interpreting model\npredictions, and exposing any biases that might exist.",
+          "metadata": {
+            "start_index": 1848,
+            "creator": "calibre 2.55.0 [http://calibre-ebook.com]",
+            "page": 8,
+            "title": "Explainable AI for Practitioners",
+            "source": "D:\\projects\\rag-system\\llm\\data\\raw\\Explainable-AI-for-Practitioners.pdf",
+            "creationdate": "2023-02-11T09:02:57+00:00",
+            "author": "Michael Munn & David Pitman",
+            "moddate": "2023-02-11T10:04:57+01:00",
+            "producer": "3-Heights(TM) PDF Optimization Shell 5.9.1.5 (http://www.pdf-tools.com)",
+            "page_label": "9",
+            "total_pages": 74
+          },
+          "distance": 0.8426652550697327,
+          "is_relevant": true,
+          "selected_reason": "Directly supports the question or provides necessary, question-specific supporting evidence.",
+          "selection_rank": 1
+        },
+        {
+          "rank": 5,
+          "id": "Explainable-AI-for-Practitioners_page_8_chunk_19",
+          "text": "predictions, and exposing any biases that might exist.\nIn addition to these summary univariate statistics, explanations in the form of EDA can also take the\nform of multivariate statistics that describe the relationship between two or more variables or features in\nyour dataset. Multivariate analysis can also be used to compute statistics to show the interaction\nbetween features and the target. This type of correlation analysis is useful not just for helping to explain\nmodel behavior but can also be beneficial for improving model performance. If two features are highly\ncorrelated, this could indicate an opportunity to simplify the feature space which can improve\ninterpretability of the machine learning model. Also, knowledge of these interdependencies is important\nwhen analyzing your model using other explainability techniques; e.g. see in Chapter 3 where we\ndiscuss the effect highly correlated features has on interpreting the results of techniques like partial",
+          "metadata": {
+            "page": 8,
+            "title": "Explainable AI for Practitioners",
+            "source": "D:\\projects\\rag-system\\llm\\data\\raw\\Explainable-AI-for-Practitioners.pdf",
+            "page_label": "9",
+            "author": "Michael Munn & David Pitman",
+            "total_pages": 74,
+            "moddate": "2023-02-11T10:04:57+01:00",
+            "producer": "3-Heights(TM) PDF Optimization Shell 5.9.1.5 (http://www.pdf-tools.com)",
+            "creator": "calibre 2.55.0 [http://calibre-ebook.com]",
+            "creationdate": "2023-02-11T09:02:57+00:00",
+            "start_index": 2743
+          },
+          "distance": null,
+          "is_relevant": true,
+          "selected_reason": "Directly supports the question or provides necessary, question-specific supporting evidence.",
+          "selection_rank": 2
+        },
+        {
+          "rank": 1,
+          "id": "Explainable-AI-for-Practitioners_page_8_chunk_16",
+          "text": "can also vary from being very precise and specific by being generated for a single prediction or based\nupon a set of predictions to give a broader insight into the model’s overall behavior. In the following\nsections we’ll give a high level description of the various types of explanations that can be used to\nbetter understand how ML solutions work.\nPre-modeling Explainability\nMachine learning models rely on data and although many Explainable AI techniques rely on interacting\nwith a model, the insights they create are often focused on the dataset and features. Thus, one of the\nmost critical stages of developing model explanations begins before any modeling takes place and is\npurely data focused. Pre-modeling explainability is focused on understanding the data or any feature\nengineering that is used to train the machine learning model.\nAs an example, consider a machine learning model that takes current and past atmospheric information",
+          "metadata": {
+            "start_index": 0,
+            "author": "Michael Munn & David Pitman",
+            "source": "D:\\projects\\rag-system\\llm\\data\\raw\\Explainable-AI-for-Practitioners.pdf",
+            "title": "Explainable AI for Practitioners",
+            "moddate": "2023-02-11T10:04:57+01:00",
+            "producer": "3-Heights(TM) PDF Optimization Shell 5.9.1.5 (http://www.pdf-tools.com)",
+            "page": 8,
+            "creator": "calibre 2.55.0 [http://calibre-ebook.com]",
+            "total_pages": 74,
+            "creationdate": "2023-02-11T09:02:57+00:00",
+            "page_label": "9"
+          },
+          "distance": 0.5778470039367676,
+          "is_relevant": true,
+          "selected_reason": "Directly supports the question or provides necessary, question-specific supporting evidence.",
+          "selection_rank": 3
+        },
+        {
+          "rank": 2,
+          "id": "Explainable-AI-for-Practitioners_page_8_chunk_17",
+          "text": "(like humidity, temperature, cloud cover, etc) and predicts the likelihood of rain. An example of an\nexplainable prediction that is model dependent would be “The model predicted a 90% chance of rain\nbecause, among the data inputs, humidity is 80% and cloud cover is 100%”. This type of explanation\nrelies on feature attribution for that model prediction. On the other hand, pre-modeling explanations\nfocus only on the properties of a dataset and are independent of any model, such as “The standard\ndeviation of the chance of rain is +/- 18%, with an average of 38%.” Inherently explainable models,\nsuch as linear and statistical models, may blur this distinction, with explanations such as “For each 10%\nincrease in the cloud cover, there is a 5% increase in the chance of rain.” Given the extensive\navailability of resources available on more “classical” statistical and linear modeling, we will only\nbriefly discuss here commonly used pre-modeling explainability techniques.",
+          "metadata": {
+            "source": "D:\\projects\\rag-system\\llm\\data\\raw\\Explainable-AI-for-Practitioners.pdf",
+            "creator": "calibre 2.55.0 [http://calibre-ebook.com]",
+            "page": 8,
+            "author": "Michael Munn & David Pitman",
+            "moddate": "2023-02-11T10:04:57+01:00",
+            "title": "Explainable AI for Practitioners",
+            "start_index": 946,
+            "page_label": "9",
+            "creationdate": "2023-02-11T09:02:57+00:00",
+            "producer": "3-Heights(TM) PDF Optimization Shell 5.9.1.5 (http://www.pdf-tools.com)",
+            "total_pages": 74
+          },
+          "distance": 0.7909156084060669,
+          "is_relevant": true,
+          "selected_reason": "Directly supports the question or provides necessary, question-specific supporting evidence.",
+          "selection_rank": 4
+        }
+      ],
+      "review_instruction": "Contains only manually selected relevant chunks from the hybrid-search and similarity-search candidate sets. All included chunks are labeled is_relevant=true; no false or unreviewed candidates are included."
+    },
+    {
+      "question_id": 4,
+      "category": "Model Scope",
+      "question": "How do intrinsic and post-hoc explanations differ, and why does the distinction matter?",
+      "answer": "Intrinsic explanations are part of the model's prediction process itself, generally requiring an interpretable model or modifications that make its behavior understandable. Post-hoc explanations are generated after training by examining a trained model and its predictions. They are often more portable because they can be separated from the model's architecture. However, an interface returning a prediction and explanation together does not necessarily provide an intrinsic explanation; it may generate the prediction first and then calculate an explanation. Understanding this distinction helps practitioners correctly describe how their explanation method operates.",
+      "relevant_chunk_ids": [
+        "Explainable-AI-for-Practitioners_page_9_chunk_21",
+        "Explainable-AI-for-Practitioners_page_9_chunk_22"
+      ],
+      "candidate_chunks": [
+        {
+          "rank": 1,
+          "id": "Explainable-AI-for-Practitioners_page_9_chunk_21",
+          "text": "can assist in this type of correlation analysis such as pair plots, heatmaps, biplots, projection plots (T-\nSNE, MDS, etc.), and parallel coordinates plots.\nIntrinsic vs. Post-Hoc Explainability\nWhen and how do we receive an explanation for a prediction? Explanations that are part of the model’s\nprediction itself are known as intrinsic explanations, while explanations that are performed after the\nmodel has been trained and rely on the prediction to create the explanation are called post-hoc\nexplanations. Most of the techniques we discuss in this book are post-hoc explanations because they are\nmore portable and can be decoupled from the model itself. By contrast, generating intrinsic explanations\noften requires modifications to the model itself or using an interpretable model. However, you may\nnotice that some libraries are set up to provide an explanation with the prediction- this does not",
+          "metadata": {
+            "title": "Explainable AI for Practitioners",
+            "total_pages": 74,
+            "creator": "calibre 2.55.0 [http://calibre-ebook.com]",
+            "start_index": 0,
+            "source": "D:\\projects\\rag-system\\llm\\data\\raw\\Explainable-AI-for-Practitioners.pdf",
+            "page": 9,
+            "page_label": "10",
+            "producer": "3-Heights(TM) PDF Optimization Shell 5.9.1.5 (http://www.pdf-tools.com)",
+            "creationdate": "2023-02-11T09:02:57+00:00",
+            "moddate": "2023-02-11T10:04:57+01:00",
+            "author": "Michael Munn & David Pitman"
+          },
+          "distance": 0.44501733779907227,
+          "is_relevant": true,
+          "selected_reason": "Directly supports the question or provides necessary, question-specific supporting evidence.",
+          "selection_rank": 1
+        },
+        {
+          "rank": 2,
+          "id": "Explainable-AI-for-Practitioners_page_9_chunk_22",
+          "text": "notice that some libraries are set up to provide an explanation with the prediction- this does not\nnecessarily mean the explanation is intrinsic, as it may be that the service first generates the prediction,\nthen the explanation, before returning both together.\nWithin the group of post-hoc explainability techniques, another factor to group techniques is whether\nthe method is model-agnostic or model-specific. A model-agnostic technique does not rely on the\nmodel’s architecture, or some inherent property of the model, so it can be used universally across many\ndifferent types of models, datasets, and scenarios. As you might imagine, it is also more useful to\nbecome more familiar with these techniques because you will have more opportunities to reuse them\nthan a technique which only works on a specific type of model architecture.\nHow can a technique not know anything about the model, and yet still generate useful explanations?",
+          "metadata": {
+            "source": "D:\\projects\\rag-system\\llm\\data\\raw\\Explainable-AI-for-Practitioners.pdf",
+            "author": "Michael Munn & David Pitman",
+            "total_pages": 74,
+            "start_index": 804,
+            "creationdate": "2023-02-11T09:02:57+00:00",
+            "page": 9,
+            "title": "Explainable AI for Practitioners",
+            "creator": "calibre 2.55.0 [http://calibre-ebook.com]",
+            "page_label": "10",
+            "producer": "3-Heights(TM) PDF Optimization Shell 5.9.1.5 (http://www.pdf-tools.com)",
+            "moddate": "2023-02-11T10:04:57+01:00"
+          },
+          "distance": 1.0191954374313354,
+          "is_relevant": true,
+          "selected_reason": "Directly supports the question or provides necessary, question-specific supporting evidence.",
+          "selection_rank": 2
+        }
+      ],
+      "review_instruction": "Contains only manually selected relevant chunks from the hybrid-search and similarity-search candidate sets. All included chunks are labeled is_relevant=true; no false or unreviewed candidates are included."
+    },
+    {
+      "question_id": 5,
+      "category": "Model Scope",
+      "question": "What distinguishes model-agnostic explainability techniques from model-specific techniques?",
+      "answer": "Model-agnostic techniques do not depend on a model's particular architecture or an inherent internal property, allowing them to be applied across different model types and scenarios. They commonly investigate changes in inputs, compare predictions, or run simulations to infer model behavior. Model-specific techniques instead use characteristics of a particular architecture, such as internal decision nodes in a tree-based model. These categories are not equivalent to interpretable versus opaque models: an opaque neural network can have model-specific explanations, while an interpretable linear model can be explained using a model-agnostic technique such as Shapley values.",
+      "relevant_chunk_ids": [
+        "Explainable-AI-for-Practitioners_page_9_chunk_23",
+        "Explainable-AI-for-Practitioners_page_9_chunk_22",
+        "Explainable-AI-for-Practitioners_page_20_chunk_61"
+      ],
+      "candidate_chunks": [
+        {
+          "rank": 2,
+          "id": "Explainable-AI-for-Practitioners_page_9_chunk_23",
+          "text": "How can a technique not know anything about the model, and yet still generate useful explanations?\nMost of these techniques rely on changing inputs to the model, correlating similar predictions, or\nrunning multiple simulations of a model. By comparison, a technique that relies on the model itself will\nleverage some internal aspect of the model’s architecture to aid in generating the explanation. For\nexample, an explanation for tree-based models may look at the weights of specific nodes within the tree\nto extract the most influential decision points within the tree to explain a prediction.\nDoes this mean that opaque, or black-box, models always use model-agnostic techniques, while\nexplainability for transparent, or interpretable, models is always model-specific? Not necessarily, there\nare many unique explanation techniques for Deep Neural Networks (DNNs) which are considered\nopaque models, and a linear regression model could be explained using Shapley values, a model-",
+          "metadata": {
+            "source": "D:\\projects\\rag-system\\llm\\data\\raw\\Explainable-AI-for-Practitioners.pdf",
+            "title": "Explainable AI for Practitioners",
+            "page": 9,
+            "creationdate": "2023-02-11T09:02:57+00:00",
+            "moddate": "2023-02-11T10:04:57+01:00",
+            "author": "Michael Munn & David Pitman",
+            "page_label": "10",
+            "creator": "calibre 2.55.0 [http://calibre-ebook.com]",
+            "producer": "3-Heights(TM) PDF Optimization Shell 5.9.1.5 (http://www.pdf-tools.com)",
+            "start_index": 1642,
+            "total_pages": 74
+          },
+          "distance": 0.6732525825500488,
+          "is_relevant": true,
+          "selected_reason": "Directly supports the question or provides necessary, question-specific supporting evidence.",
+          "selection_rank": 1
+        },
+        {
+          "rank": 1,
+          "id": "Explainable-AI-for-Practitioners_page_9_chunk_22",
+          "text": "notice that some libraries are set up to provide an explanation with the prediction- this does not\nnecessarily mean the explanation is intrinsic, as it may be that the service first generates the prediction,\nthen the explanation, before returning both together.\nWithin the group of post-hoc explainability techniques, another factor to group techniques is whether\nthe method is model-agnostic or model-specific. A model-agnostic technique does not rely on the\nmodel’s architecture, or some inherent property of the model, so it can be used universally across many\ndifferent types of models, datasets, and scenarios. As you might imagine, it is also more useful to\nbecome more familiar with these techniques because you will have more opportunities to reuse them\nthan a technique which only works on a specific type of model architecture.\nHow can a technique not know anything about the model, and yet still generate useful explanations?",
+          "metadata": {
+            "producer": "3-Heights(TM) PDF Optimization Shell 5.9.1.5 (http://www.pdf-tools.com)",
+            "moddate": "2023-02-11T10:04:57+01:00",
+            "page": 9,
+            "total_pages": 74,
+            "creator": "calibre 2.55.0 [http://calibre-ebook.com]",
+            "page_label": "10",
+            "creationdate": "2023-02-11T09:02:57+00:00",
+            "title": "Explainable AI for Practitioners",
+            "start_index": 804,
+            "author": "Michael Munn & David Pitman",
+            "source": "D:\\projects\\rag-system\\llm\\data\\raw\\Explainable-AI-for-Practitioners.pdf"
+          },
+          "distance": 0.40274083614349365,
+          "is_relevant": true,
+          "selected_reason": "Directly supports the question or provides necessary, question-specific supporting evidence.",
+          "selection_rank": 2
+        },
+        {
+          "rank": 3,
+          "id": "Explainable-AI-for-Practitioners_page_20_chunk_61",
+          "text": "explainability techniques that can be applied to image models.\nSurrogate Models\nAnother form of explaining a model’s behavior is to use a simplified version of the model, the\nsurrogate, to give more explanatory power directly from observing the architecture of the model (also\nknown as model distillation). In this sense, surrogate models represent a halfway point between post-\nhoc explainability and intrinsic interpretable models. While this may sound like the best of both worlds,\nthe tradeoff is that a surrogate model almost always has worse performance than the original model, and\nusually cannot guarantee that all predictions are accurately explained, particularly in edge cases or areas\nof the dataset that were under-represented during training.\nSurrogate models usually have a linear, decision tree, or rule-based architecture. Where possible, we try",
+          "metadata": {
+            "title": "Explainable AI for Practitioners",
+            "author": "Michael Munn & David Pitman",
+            "producer": "3-Heights(TM) PDF Optimization Shell 5.9.1.5 (http://www.pdf-tools.com)",
+            "source": "D:\\projects\\rag-system\\llm\\data\\raw\\Explainable-AI-for-Practitioners.pdf",
+            "moddate": "2023-02-11T10:04:57+01:00",
+            "page": 20,
+            "creator": "calibre 2.55.0 [http://calibre-ebook.com]",
+            "page_label": "21",
+            "start_index": 943,
+            "total_pages": 74,
+            "creationdate": "2023-02-11T09:02:57+00:00"
+          },
+          "distance": 0.8595564365386963,
+          "is_relevant": true,
+          "selected_reason": "Directly supports the question or provides necessary, question-specific supporting evidence.",
+          "selection_rank": 3
+        }
+      ],
+      "review_instruction": "Contains only manually selected relevant chunks from the hybrid-search and similarity-search candidate sets. All included chunks are labeled is_relevant=true; no false or unreviewed candidates are included."
+    },
+    {
+      "question_id": 6,
+      "category": "Explanation Scope",
+      "question": "What are local, cohort, and global explanations, and when is each useful?",
+      "answer": "A local explanation describes a single prediction, helping someone understand a particular decision or outcome. A cohort explanation examines a subset of predictions and can be used to compare groups, revealing differences that may otherwise remain hidden. A global explanation summarizes the model's overall behavior across a broader collection of predictions and is useful for stakeholders, regulators, and model comparisons. These scopes are not interchangeable. In particular, a global summary does not guarantee how the model will behave on an individual or on previously unseen inputs after deployment.",
+      "relevant_chunk_ids": [
+        "Explainable-AI-for-Practitioners_page_9_chunk_24",
+        "Explainable-AI-for-Practitioners_page_10_chunk_26",
+        "Explainable-AI-for-Practitioners_page_8_chunk_16",
+        "Explainable-AI-for-Practitioners_page_21_chunk_64"
+      ],
+      "candidate_chunks": [
+        {
+          "rank": 1,
+          "id": "Explainable-AI-for-Practitioners_page_9_chunk_24",
+          "text": "opaque models, and a linear regression model could be explained using Shapley values, a model-\nagnostic technique.\nLocal, Cohort, and Global Explanations\nExplanations themselves can cover a wide variety of topics, but one of the most fundamental is whether\nthe explanation is local, cohort, or global with respect to the range of predictions the explanation\ncovers. A local explanation seeks to provide context and understanding for a single prediction. A global\nexplanation provides information about the overall behavior of the model across all predictions. Cohort\nexplanations lie in between, providing an understanding for a subset of predictions made by the model.\nLocal explanations may be similar for comparable inferences, but this is not an absolute and depends on\nthe technique, model, and dataset. Put another way, it is rarely safe to assume that an explanation for\none set of inputs and inference is blindly applicable to a similar set of inputs and/or prediction.\n2",
+          "metadata": {
+            "author": "Michael Munn & David Pitman",
+            "producer": "3-Heights(TM) PDF Optimization Shell 5.9.1.5 (http://www.pdf-tools.com)",
+            "creationdate": "2023-02-11T09:02:57+00:00",
+            "page": 9,
+            "total_pages": 74,
+            "source": "D:\\projects\\rag-system\\llm\\data\\raw\\Explainable-AI-for-Practitioners.pdf",
+            "moddate": "2023-02-11T10:04:57+01:00",
+            "title": "Explainable AI for Practitioners",
+            "creator": "calibre 2.55.0 [http://calibre-ebook.com]",
+            "start_index": 2529,
+            "page_label": "10"
+          },
+          "distance": 0.3710441291332245,
+          "is_relevant": true,
+          "selected_reason": "Directly supports the question or provides necessary, question-specific supporting evidence.",
+          "selection_rank": 1
+        },
+        {
+          "rank": 2,
+          "id": "Explainable-AI-for-Practitioners_page_10_chunk_26",
+          "text": "to compare the deployed model’s behavior against its original performance.\nWARNING\nGlobal explanations are not a set of rules describing the boundaries of a model’s behavior, but instead only what has been\nobserved based in the original training data. Once a model is deployed and is exposed to novel data not seen during training, it\nis possible that during inference local explanations can differ from or even directly contradict global explanations.\nExplainable methods for cohorts are usually the same techniques as what is used to calculate global\nexplanations, just applied to a smaller set of data. One powerful aspect of cohort explanations is that one\ncohort can be compared against another cohort to provide insights about the global behavior of the\nmodel that may not be apparent if we just sought a global explanation. These comparisons are useful\nenough in their own right to serve as the underpinnings for another pillar of Responsible AI: testing and",
+          "metadata": {
+            "author": "Michael Munn & David Pitman",
+            "creationdate": "2023-02-11T09:02:57+00:00",
+            "page_label": "11",
+            "total_pages": 74,
+            "start_index": 933,
+            "moddate": "2023-02-11T10:04:57+01:00",
+            "source": "D:\\projects\\rag-system\\llm\\data\\raw\\Explainable-AI-for-Practitioners.pdf",
+            "page": 10,
+            "creator": "calibre 2.55.0 [http://calibre-ebook.com]",
+            "producer": "3-Heights(TM) PDF Optimization Shell 5.9.1.5 (http://www.pdf-tools.com)",
+            "title": "Explainable AI for Practitioners"
+          },
+          "distance": 0.508529543876648,
+          "is_relevant": true,
+          "selected_reason": "Directly supports the question or provides necessary, question-specific supporting evidence.",
+          "selection_rank": 2
+        },
+        {
+          "rank": 9,
+          "id": "Explainable-AI-for-Practitioners_page_8_chunk_16",
+          "text": "can also vary from being very precise and specific by being generated for a single prediction or based\nupon a set of predictions to give a broader insight into the model’s overall behavior. In the following\nsections we’ll give a high level description of the various types of explanations that can be used to\nbetter understand how ML solutions work.\nPre-modeling Explainability\nMachine learning models rely on data and although many Explainable AI techniques rely on interacting\nwith a model, the insights they create are often focused on the dataset and features. Thus, one of the\nmost critical stages of developing model explanations begins before any modeling takes place and is\npurely data focused. Pre-modeling explainability is focused on understanding the data or any feature\nengineering that is used to train the machine learning model.\nAs an example, consider a machine learning model that takes current and past atmospheric information",
+          "metadata": {
+            "source": "D:\\projects\\rag-system\\llm\\data\\raw\\Explainable-AI-for-Practitioners.pdf",
+            "start_index": 0,
+            "creator": "calibre 2.55.0 [http://calibre-ebook.com]",
+            "moddate": "2023-02-11T10:04:57+01:00",
+            "total_pages": 74,
+            "author": "Michael Munn & David Pitman",
+            "page": 8,
+            "title": "Explainable AI for Practitioners",
+            "creationdate": "2023-02-11T09:02:57+00:00",
+            "producer": "3-Heights(TM) PDF Optimization Shell 5.9.1.5 (http://www.pdf-tools.com)",
+            "page_label": "9"
+          },
+          "distance": 1.3143548965454102,
+          "is_relevant": true,
+          "selected_reason": "Directly supports the question or provides necessary, question-specific supporting evidence.",
+          "selection_rank": 3
+        },
+        {
+          "rank": 5,
+          "id": "Explainable-AI-for-Practitioners_page_21_chunk_64",
+          "text": "job. By understanding what type of explanation will be most useful to your audience, you can go\nstraight to using the best technique. Choosing an explanation method by simply trying many different\ntechniques until an explanation looks good enough is closer to asking ten strangers you find on the\nstreet for investment advice. You may get a lot of interesting opinions, but it is unlikely most of them\nwill be valid.\nStart with asking yourself about who is receiving the explanation, what is it that needs to be explained,\nand what will happen after the explanation? For example, an end-user receiving an explanation about\nbeing denied a loan will not find a global explanation focused on understanding the model’s architecture\nto be relevant or actionable. Better to use a technique that is local and focused on the features in order to\ncenter the explanation on factors in the user’s control. You may even add a technique that provides a",
+          "metadata": {
+            "page_label": "22",
+            "source": "D:\\projects\\rag-system\\llm\\data\\raw\\Explainable-AI-for-Practitioners.pdf",
+            "total_pages": 74,
+            "author": "Michael Munn & David Pitman",
+            "creator": "calibre 2.55.0 [http://calibre-ebook.com]",
+            "producer": "3-Heights(TM) PDF Optimization Shell 5.9.1.5 (http://www.pdf-tools.com)",
+            "moddate": "2023-02-11T10:04:57+01:00",
+            "creationdate": "2023-02-11T09:02:57+00:00",
+            "title": "Explainable AI for Practitioners",
+            "page": 21,
+            "start_index": 1763
+          },
+          "distance": 1.215343713760376,
+          "is_relevant": true,
+          "selected_reason": "Directly supports the question or provides necessary, question-specific supporting evidence.",
+          "selection_rank": 4
+        }
+      ],
+      "review_instruction": "Contains only manually selected relevant chunks from the hybrid-search and similarity-search candidate sets. All included chunks are labeled is_relevant=true; no false or unreviewed candidates are included."
+    },
+    {
+      "question_id": 7,
+      "category": "Fairness and Evaluation",
+      "question": "How can cohort explanations help investigate potential unfairness in a machine-learning model?",
+      "answer": "Cohort explanations allow practitioners to compare model behavior across different subsets of predictions. For example, they can examine whether a loan approval model behaves differently for groups of applicants and investigate whether the differences reflect relevant financial information or potentially inappropriate patterns learned from historical data. Such comparisons can reveal issues that a global explanation might obscure. However, explainability and fairness are distinct areas, even though they share related foundations. Observing differences between groups is a useful starting point for investigation, not by itself proof that a model is fair or unfair.",
+      "relevant_chunk_ids": [
+        "Explainable-AI-for-Practitioners_page_10_chunk_27",
+        "Explainable-AI-for-Practitioners_page_10_chunk_26",
+        "Explainable-AI-for-Practitioners_page_6_chunk_10",
+        "Explainable-AI-for-Practitioners_page_7_chunk_15"
+      ],
+      "candidate_chunks": [
+        {
+          "rank": 1,
+          "id": "Explainable-AI-for-Practitioners_page_10_chunk_27",
+          "text": "evaluating the Fairness of a model. Fairness techniques seek to evaluate how a model performs for one\ncohort of predictions compared to another, with the goal of ensuring that the model generates similar\npredictions based on relevant factors rather than discriminating on characteristics that are deemed to be\nunimportant, or may not even be desirable to use in the first place. A classic example is how an AI that\nseeks to determine whether an individual should be approved for a loan may be trained on historical\ndata in the US, which contains prevalent discrimination against people of different races. Scrutinizing\nthe ML for Fairness would tell us whether the model learned this racial discrimination, or whether it is\nbasing its decisions solely on the relevant financial background of the individual such as their income\nand history of on-time loan payments. Although Explainability and Fairness share many of the same",
+          "metadata": {
+            "moddate": "2023-02-11T10:04:57+01:00",
+            "creator": "calibre 2.55.0 [http://calibre-ebook.com]",
+            "page_label": "11",
+            "page": 10,
+            "source": "D:\\projects\\rag-system\\llm\\data\\raw\\Explainable-AI-for-Practitioners.pdf",
+            "author": "Michael Munn & David Pitman",
+            "total_pages": 74,
+            "creationdate": "2023-02-11T09:02:57+00:00",
+            "title": "Explainable AI for Practitioners",
+            "producer": "3-Heights(TM) PDF Optimization Shell 5.9.1.5 (http://www.pdf-tools.com)",
+            "start_index": 1899
+          },
+          "distance": 0.7380732297897339,
+          "is_relevant": true,
+          "selected_reason": "Directly supports the question or provides necessary, question-specific supporting evidence.",
+          "selection_rank": 1
+        },
+        {
+          "rank": 2,
+          "id": "Explainable-AI-for-Practitioners_page_10_chunk_26",
+          "text": "to compare the deployed model’s behavior against its original performance.\nWARNING\nGlobal explanations are not a set of rules describing the boundaries of a model’s behavior, but instead only what has been\nobserved based in the original training data. Once a model is deployed and is exposed to novel data not seen during training, it\nis possible that during inference local explanations can differ from or even directly contradict global explanations.\nExplainable methods for cohorts are usually the same techniques as what is used to calculate global\nexplanations, just applied to a smaller set of data. One powerful aspect of cohort explanations is that one\ncohort can be compared against another cohort to provide insights about the global behavior of the\nmodel that may not be apparent if we just sought a global explanation. These comparisons are useful\nenough in their own right to serve as the underpinnings for another pillar of Responsible AI: testing and",
+          "metadata": {
+            "creator": "calibre 2.55.0 [http://calibre-ebook.com]",
+            "start_index": 933,
+            "author": "Michael Munn & David Pitman",
+            "title": "Explainable AI for Practitioners",
+            "creationdate": "2023-02-11T09:02:57+00:00",
+            "total_pages": 74,
+            "moddate": "2023-02-11T10:04:57+01:00",
+            "page_label": "11",
+            "source": "D:\\projects\\rag-system\\llm\\data\\raw\\Explainable-AI-for-Practitioners.pdf",
+            "page": 10,
+            "producer": "3-Heights(TM) PDF Optimization Shell 5.9.1.5 (http://www.pdf-tools.com)"
+          },
+          "distance": 0.7895553112030029,
+          "is_relevant": true,
+          "selected_reason": "Directly supports the question or provides necessary, question-specific supporting evidence.",
+          "selection_rank": 2
+        },
+        {
+          "rank": 3,
+          "id": "Explainable-AI-for-Practitioners_page_6_chunk_10",
+          "text": "that the model is generating outcomes that are unfairly biased towards certain individuals.\nHowever, a ML engineer may be asking “how can we improve the performance of our data pipeline?”\nCertain features may be costly to obtain, or computationally expensive to transform into a usable form.\nIf we find that the model rarely uses those features in practice, then it is an easy decision to remove\nthem to improve the system overall. Practitioners may also be interested in explainability once the\nsystem is deployed, but their interest still remains in understanding the underlying mechanisms and\nperformance. Explainability has proven to be a robust and powerful tool for monitoring deployed\nmodels for drift and skew in their predictions, indicating when a model should be retrained.\nAnd of course, you may simply be interested in an explanation because, like any practitioner, you’ve\nencountered a situation when the model made you squint and say “what the...?”",
+          "metadata": {
+            "creationdate": "2023-02-11T09:02:57+00:00",
+            "start_index": 1774,
+            "author": "Michael Munn & David Pitman",
+            "producer": "3-Heights(TM) PDF Optimization Shell 5.9.1.5 (http://www.pdf-tools.com)",
+            "source": "D:\\projects\\rag-system\\llm\\data\\raw\\Explainable-AI-for-Practitioners.pdf",
+            "creator": "calibre 2.55.0 [http://calibre-ebook.com]",
+            "title": "Explainable AI for Practitioners",
+            "page": 6,
+            "page_label": "7",
+            "total_pages": 74,
+            "moddate": "2023-02-11T10:04:57+01:00"
+          },
+          "distance": 0.8508349657058716,
+          "is_relevant": true,
+          "selected_reason": "Directly supports the question or provides necessary, question-specific supporting evidence.",
+          "selection_rank": 3
+        },
+        {
+          "rank": 5,
+          "id": "Explainable-AI-for-Practitioners_page_7_chunk_15",
+          "text": "you were given a loan with a very, very high interest rate, but understand that it is fair because you have\na poor history of repaying loans on time. After understanding the current situation, you might\nreasonably ask “how long of a history of on-time loan payments would I need to establish in order to get\na lower interest rate?”\nTypes of Explanations\nModern day machine learning solutions are often complex systems incorporating many components\nfrom data processing and feature engineering pipelines, to model training and development to model\nserving, monitoring and updating. As a result, there are many factors that contribute to explaining why\nand how a machine learning system makes the predictions it does and explainability methods can be\napplied at each step of the ML development pipeline. In addition, the format of an explanation can\ndepend on the modality of the model (e.g., whether it is a tabular, image, or text model). Explanations",
+          "metadata": {
+            "start_index": 2610,
+            "moddate": "2023-02-11T10:04:57+01:00",
+            "title": "Explainable AI for Practitioners",
+            "creationdate": "2023-02-11T09:02:57+00:00",
+            "page": 7,
+            "author": "Michael Munn & David Pitman",
+            "creator": "calibre 2.55.0 [http://calibre-ebook.com]",
+            "source": "D:\\projects\\rag-system\\llm\\data\\raw\\Explainable-AI-for-Practitioners.pdf",
+            "producer": "3-Heights(TM) PDF Optimization Shell 5.9.1.5 (http://www.pdf-tools.com)",
+            "total_pages": 74,
+            "page_label": "8"
+          },
+          "distance": 0.9105977416038513,
+          "is_relevant": true,
+          "selected_reason": "Directly supports the question or provides necessary, question-specific supporting evidence.",
+          "selection_rank": 4
+        }
+      ],
+      "review_instruction": "Contains only manually selected relevant chunks from the hybrid-search and similarity-search candidate sets. All included chunks are labeled is_relevant=true; no false or unreviewed candidates are included."
+    },
+    {
+      "question_id": 8,
+      "category": "Feature Attribution",
+      "question": "What does a feature attribution represent, and how can its value be interpreted?",
+      "answer": "A feature attribution represents the influence of a feature on a model's prediction, with its value interpreted according to the chosen technique. Attributions can be absolute, expressing a contribution in terms of the prediction's value, or relative, describing influence compared with other features. A large attribution does not necessarily mean that a feature is inherently good or that it improves prediction accuracy; its interpretation depends on the model, task, and method. The book also emphasizes that different attribution techniques can assign substantially different values to the same features, so method selection matters.",
+      "relevant_chunk_ids": [
+        "Explainable-AI-for-Practitioners_page_11_chunk_31",
+        "Explainable-AI-for-Practitioners_page_11_chunk_32",
+        "Explainable-AI-for-Practitioners_page_12_chunk_33",
+        "Explainable-AI-for-Practitioners_page_12_chunk_34",
+        "Explainable-AI-for-Practitioners_page_12_chunk_35"
+      ],
+      "candidate_chunks": [
+        {
+          "rank": 1,
+          "id": "Explainable-AI-for-Practitioners_page_11_chunk_31",
+          "text": "an overview of some common themes that have been introduced and further developed the field.\nFeature Attributions\nFeature attribution methods are common throughout Explainable AI. What does it mean to attribute a\nprediction to an individual feature in your dataset? Formally, a feature attribution represents the\ninfluence of that feature (and its value for a local explanation) on the prediction. Feature attributions can\nbe absolute, for example if a predicted temperature is 24° C, a feature could be attributed 8° C of that\npredicted value, or even a negative value like -12° C. Feature attributions can also be relative,\nrepresenting a percentage of influence compared to other features used by the model.\nNOTE\nIn this book, we often describe features as influencing a model, while the specific amount of influence is the attribution. In\npractice, “feature influence” and “feature attribution” are often used interchangeably.",
+          "metadata": {
+            "producer": "3-Heights(TM) PDF Optimization Shell 5.9.1.5 (http://www.pdf-tools.com)",
+            "total_pages": 74,
+            "title": "Explainable AI for Practitioners",
+            "start_index": 1886,
+            "moddate": "2023-02-11T10:04:57+01:00",
+            "creator": "calibre 2.55.0 [http://calibre-ebook.com]",
+            "page": 11,
+            "page_label": "12",
+            "author": "Michael Munn & David Pitman",
+            "creationdate": "2023-02-11T09:02:57+00:00",
+            "source": "D:\\projects\\rag-system\\llm\\data\\raw\\Explainable-AI-for-Practitioners.pdf"
+          },
+          "distance": 0.38450029492378235,
+          "is_relevant": true,
+          "selected_reason": "Directly supports the question or provides necessary, question-specific supporting evidence.",
+          "selection_rank": 1
+        },
+        {
+          "rank": 10,
+          "id": "Explainable-AI-for-Practitioners_page_11_chunk_32",
+          "text": "practice, “feature influence” and “feature attribution” are often used interchangeably.\nIf the idea of a feature having influence that is relative seems strange to you, then you’re in good\ncompany. Understanding what feature attributions convey as explanations, and what they don’t, is rife\nwith confusion and it is often difficult for end-users to build an understanding of feature attributions’\ntrue mechanism. For a more intuitive feel of how feature attributions work, let’s walk through an",
+          "metadata": {
+            "moddate": "2023-02-11T10:04:57+01:00",
+            "author": "Michael Munn & David Pitman",
+            "page_label": "12",
+            "total_pages": 74,
+            "producer": "3-Heights(TM) PDF Optimization Shell 5.9.1.5 (http://www.pdf-tools.com)",
+            "source": "D:\\projects\\rag-system\\llm\\data\\raw\\Explainable-AI-for-Practitioners.pdf",
+            "creator": "calibre 2.55.0 [http://calibre-ebook.com]",
+            "creationdate": "2023-02-11T09:02:57+00:00",
+            "page": 11,
+            "start_index": 2729,
+            "title": "Explainable AI for Practitioners"
+          },
+          "distance": 0.8693231344223022,
+          "is_relevant": true,
+          "selected_reason": "Directly supports the question or provides necessary, question-specific supporting evidence.",
+          "selection_rank": 2
+        },
+        {
+          "rank": 5,
+          "id": "Explainable-AI-for-Practitioners_page_12_chunk_33",
+          "text": "imaginary scenario of an orchestra playing music. Within this orchestra, there are a variety of musicians\n(which we will treat as features) that contribute to the overall performance of how well the orchestra\nplays a musical composition. For Explainable AI, let’s imagine that the orchestra is going to participate\nin ExplainableVision, a competition where a judge (the ML model) tries to predict how well an\norchestra performs music by listening to the music played by each individual musician in the orchestra.\nIn our analogy, we can use feature attributions to understand how each musician influenced the overall\nrating of the orchestra given by the judge.\nEach feature attribution represents how a musician sways the judge towards the most accurate\nprediction of the musical talent of the orchestra. Some musicians may be useful to the judge in\ndetermining an accurate score of the overall orchestra’s performance, so we would assign them a high",
+          "metadata": {
+            "producer": "3-Heights(TM) PDF Optimization Shell 5.9.1.5 (http://www.pdf-tools.com)",
+            "start_index": 0,
+            "title": "Explainable AI for Practitioners",
+            "creator": "calibre 2.55.0 [http://calibre-ebook.com]",
+            "total_pages": 74,
+            "page": 12,
+            "page_label": "13",
+            "source": "D:\\projects\\rag-system\\llm\\data\\raw\\Explainable-AI-for-Practitioners.pdf",
+            "moddate": "2023-02-11T10:04:57+01:00",
+            "creationdate": "2023-02-11T09:02:57+00:00",
+            "author": "Michael Munn & David Pitman"
+          },
+          "distance": 0.9427995681762695,
+          "is_relevant": true,
+          "selected_reason": "Directly supports the question or provides necessary, question-specific supporting evidence.",
+          "selection_rank": 3
+        },
+        {
+          "rank": 6,
+          "id": "Explainable-AI-for-Practitioners_page_12_chunk_34",
+          "text": "value for their feature attribution. Perhaps it is because they are close to the average talent of the\norchestra, or the amount of time they spend playing in any given performance is very high. However,\nother musicians may not be as helpful and cause the judges to give an inaccurate score, in which case\nwe would give them a small feature attribution. This low score could be for a number of reasons. For\nexample, it could be because those musicians are just bad at playing music, which is distracting to the\njudge. Or perhaps, they’re fine musicians but they play out of harmony with the rest of the orchestra. Or\nmaybe they’re fantastic musicians and cause the judges to give a very positive assessment of the\norchestra’s talent, even though the rest of the orchestra is really bad. In any of these cases, the feature\nattribution of that musician should be given a smaller value because their contribution negatively affects",
+          "metadata": {
+            "creator": "calibre 2.55.0 [http://calibre-ebook.com]",
+            "title": "Explainable AI for Practitioners",
+            "producer": "3-Heights(TM) PDF Optimization Shell 5.9.1.5 (http://www.pdf-tools.com)",
+            "start_index": 950,
+            "author": "Michael Munn & David Pitman",
+            "creationdate": "2023-02-11T09:02:57+00:00",
+            "total_pages": 74,
+            "page": 12,
+            "source": "D:\\projects\\rag-system\\llm\\data\\raw\\Explainable-AI-for-Practitioners.pdf",
+            "page_label": "13",
+            "moddate": "2023-02-11T10:04:57+01:00"
+          },
+          "distance": null,
+          "is_relevant": true,
+          "selected_reason": "Directly supports the question or provides necessary, question-specific supporting evidence.",
+          "selection_rank": 4
+        },
+        {
+          "rank": 4,
+          "id": "Explainable-AI-for-Practitioners_page_12_chunk_35",
+          "text": "the judge’s ability to provide an accurate score of the orchestra’s overall skill. For either high or low\nfeature attribution scores, the assessment to determine the attribution of a single musician to the judge’s\noverall prediction of the orchestra’s talent is still “how much did that musician influence the judge’s\nrating?”\nChoosing an appropriate feature attribution technique is not just a matter of finding the latest or most\naccurate state-of-the-art method. Techniques can vary wildly, or even be completely opposed in the\nattribution they give to different features. Figure 2-1 shows an example of this by comparing seven\ndifferent feature attribution techniques for the same dataset and model:",
+          "metadata": {
+            "source": "D:\\projects\\rag-system\\llm\\data\\raw\\Explainable-AI-for-Practitioners.pdf",
+            "creator": "calibre 2.55.0 [http://calibre-ebook.com]",
+            "title": "Explainable AI for Practitioners",
+            "total_pages": 74,
+            "creationdate": "2023-02-11T09:02:57+00:00",
+            "start_index": 1878,
+            "author": "Michael Munn & David Pitman",
+            "producer": "3-Heights(TM) PDF Optimization Shell 5.9.1.5 (http://www.pdf-tools.com)",
+            "page_label": "13",
+            "moddate": "2023-02-11T10:04:57+01:00",
+            "page": 12
+          },
+          "distance": 0.8938222527503967,
+          "is_relevant": true,
+          "selected_reason": "Directly supports the question or provides necessary, question-specific supporting evidence.",
+          "selection_rank": 5
+        }
+      ],
+      "review_instruction": "Contains only manually selected relevant chunks from the hybrid-search and similarity-search candidate sets. All included chunks are labeled is_relevant=true; no false or unreviewed candidates are included."
+    },
+    {
+      "question_id": 9,
+      "category": "Shapley Values",
+      "question": "Why are sampled Shapley methods used, and what trade-offs do they introduce?",
+      "answer": "Calculating exact Shapley values can require predictions for an enormous number of feature combinations, making exhaustive computation impractical for many datasets. Sampled Shapley methods reduce this cost by approximating the relevant paths or coalitions, for example through random sampling and averaging. The resulting attributions are estimates rather than necessarily exact values, and approximation error may mean that they do not sum precisely to the prediction. Increasing the number of sampled paths can reduce error but increases runtime. Practitioners must therefore balance computational expense against the precision needed for their application.",
+      "relevant_chunk_ids": [
+        "Explainable-AI-for-Practitioners_page_17_chunk_48",
+        "Explainable-AI-for-Practitioners_page_17_chunk_49",
+        "Explainable-AI-for-Practitioners_page_18_chunk_52",
+        "Explainable-AI-for-Practitioners_page_18_chunk_53",
+        "Explainable-AI-for-Practitioners_page_14_chunk_39"
+      ],
+      "candidate_chunks": [
+        {
+          "rank": 1,
+          "id": "Explainable-AI-for-Practitioners_page_17_chunk_48",
+          "text": "the Shapley values for each possible class, rather than just the predicted class.\nSampled Shapley technique\nIn a world with infinite time, you would calculate intermediate attributions for every possible path,\nrepresenting every possible coalition of features. However, this quickly becomes computationally\ninfeasible–for a dataset with ten features, we would need to get predictions for 2 combinations (or\n1,023 additional predictions!). So almost every feature attribution technique you encounter that relies on\nShapley values will use an optimized method known as sampled Shapley.\nThe idea behind sampled Shapley is that you can approximate these paths by either skipping steps in the\npath for some features where there does not appear to be a large contribution, sampling random\ncoalitions and averaging the results using Monte Carlo methods, or following gradients. The tradeoff to\nusing sampling is that we now have an approximation of the true attribution values, with an associated",
+          "metadata": {
+            "moddate": "2023-02-11T10:04:57+01:00",
+            "page_label": "18",
+            "title": "Explainable AI for Practitioners",
+            "author": "Michael Munn & David Pitman",
+            "total_pages": 74,
+            "start_index": 924,
+            "source": "D:\\projects\\rag-system\\llm\\data\\raw\\Explainable-AI-for-Practitioners.pdf",
+            "creator": "calibre 2.55.0 [http://calibre-ebook.com]",
+            "page": 17,
+            "creationdate": "2023-02-11T09:02:57+00:00",
+            "producer": "3-Heights(TM) PDF Optimization Shell 5.9.1.5 (http://www.pdf-tools.com)"
+          },
+          "distance": 0.38426870107650757,
+          "is_relevant": true,
+          "selected_reason": "Directly supports the question or provides necessary, question-specific supporting evidence.",
+          "selection_rank": 1
+        },
+        {
+          "rank": 8,
+          "id": "Explainable-AI-for-Practitioners_page_17_chunk_49",
+          "text": "approximation error. Due to this approximation error, our Shapley values may not sum up to the\npredicted result. There is no universal way to calculate the approximation error, or “good” range from\nthe approximation error, but generally you will want to try tuning the number of sampled paths to get\nthe best tradeoff between computation performance and error; a higher number of sampled paths will\ndecrease the error but increase runtime, and vice versa.\nBaselines\nIn our examples of Shapley paths, we repeatedly referred to model prediction values using only a subset\nof the features our model was built for (e.g., P{temperature, cloud_cover} when our model took\ntemperature, cloud_cover, and also humidity as inputs). There are several ways to compute these\n“partial” predictions, but for the purposes of this book we will focus on Shapley techniques which use\nBaselines.\nThe main concept behind baselines is that if one can find a neutral, or uninformative, value for a feature,",
+          "metadata": {
+            "source": "D:\\projects\\rag-system\\llm\\data\\raw\\Explainable-AI-for-Practitioners.pdf",
+            "moddate": "2023-02-11T10:04:57+01:00",
+            "page": 17,
+            "creationdate": "2023-02-11T09:02:57+00:00",
+            "start_index": 1914,
+            "producer": "3-Heights(TM) PDF Optimization Shell 5.9.1.5 (http://www.pdf-tools.com)",
+            "author": "Michael Munn & David Pitman",
+            "total_pages": 74,
+            "creator": "calibre 2.55.0 [http://calibre-ebook.com]",
+            "page_label": "18",
+            "title": "Explainable AI for Practitioners"
+          },
+          "distance": 1.0086532831192017,
+          "is_relevant": true,
+          "selected_reason": "Directly supports the question or provides necessary, question-specific supporting evidence.",
+          "selection_rank": 2
+        },
+        {
+          "rank": 8,
+          "id": "Explainable-AI-for-Practitioners_page_18_chunk_52",
+          "text": "invented over time to overcome these limitations by addressing how to treat the removed features\nand combinations in intermediate steps of path. Many involve creating a synthetic value for the\nremoved feature(s) that allows the model to be used as-is with minimal contribution from the\nremoved features, rather than trying to alter the model architecture or final predicted value, and\noften assuming that the ordering of features in the intermediate path steps does not matter. For\nexample, the open source SHAP library has four different implementations for efficiently\ncalculating Shapley values based on the model architecture. For a deeper discussion of the different\nShapley value techniques, see the very well written The Many Shapley Values for Model\nExplanation by Sundararajan and Najmi.\nYou will often see Shapley values referenced as a method for explanations, or forming the basis behind",
+          "metadata": {
+            "title": "Explainable AI for Practitioners",
+            "producer": "3-Heights(TM) PDF Optimization Shell 5.9.1.5 (http://www.pdf-tools.com)",
+            "total_pages": 74,
+            "author": "Michael Munn & David Pitman",
+            "creationdate": "2023-02-11T09:02:57+00:00",
+            "start_index": 820,
+            "moddate": "2023-02-11T10:04:57+01:00",
+            "source": "D:\\projects\\rag-system\\llm\\data\\raw\\Explainable-AI-for-Practitioners.pdf",
+            "page": 18,
+            "page_label": "19",
+            "creator": "calibre 2.55.0 [http://calibre-ebook.com]"
+          },
+          "distance": 0.886468768119812,
+          "is_relevant": true,
+          "selected_reason": "Directly supports the question or provides necessary, question-specific supporting evidence.",
+          "selection_rank": 3
+        },
+        {
+          "rank": 5,
+          "id": "Explainable-AI-for-Practitioners_page_18_chunk_53",
+          "text": "others. As they have seen many decades of use across a variety of fields, and been very well studied in\nacademia, they represent one of the most proven techniques for explainability. However, as we saw in\ndiscussing sampled Shapley, true Shapley values are computationally infeasible for most datasets, so\nthere are tradeoffs to this technique due to the lack of precision. Likewise, although superficially it is\neasier to understand feature attributions based on Shapley values, it can be quite difficult to explain the\ngame theory concepts to stakeholders to build trust in use of these techniques.\nGradient-based techniques\nGradient based approaches towards explainability are some of the most powerful and commonly used\ntechniques in the field. Deep learning models are differentiable by construction and the derivative of a\nfunction contains important information about the local behavior of the function. Furthermore, since",
+          "metadata": {
+            "source": "D:\\projects\\rag-system\\llm\\data\\raw\\Explainable-AI-for-Practitioners.pdf",
+            "start_index": 1720,
+            "page": 18,
+            "moddate": "2023-02-11T10:04:57+01:00",
+            "producer": "3-Heights(TM) PDF Optimization Shell 5.9.1.5 (http://www.pdf-tools.com)",
+            "page_label": "19",
+            "title": "Explainable AI for Practitioners",
+            "creator": "calibre 2.55.0 [http://calibre-ebook.com]",
+            "creationdate": "2023-02-11T09:02:57+00:00",
+            "author": "Michael Munn & David Pitman",
+            "total_pages": 74
+          },
+          "distance": 0.9983787536621094,
+          "is_relevant": true,
+          "selected_reason": "Directly supports the question or provides necessary, question-specific supporting evidence.",
+          "selection_rank": 4
+        },
+        {
+          "rank": 9,
+          "id": "Explainable-AI-for-Practitioners_page_14_chunk_39",
+          "text": "the model and comparing the results of the predicted values.\nWe can describe how Shapley values are computed in two ways, coalitions and paths. With coalitions,\nShapley are represented by grouping the features of a dataset into multiple, overlapping subsets, which\nare the coalitions. For each coalition, a prediction value is generated using only the features in that\ncoalition and compared against the prediction for a coalition that includes one additional feature.\nCalculating Shapley values can also be framed as a dynamic programming problem, where a series of\nsteps, or paths, are generated. Each step in a path represents incrementally including another feature\nfrom the dataset to generate the prediction. We generate many different paths to represent the different\npermutations of the order in which features could be included.\nMore concretely, imagine we had a weather dataset, and we wanted to predict the amount of rain (in",
+          "metadata": {
+            "title": "Explainable AI for Practitioners",
+            "producer": "3-Heights(TM) PDF Optimization Shell 5.9.1.5 (http://www.pdf-tools.com)",
+            "moddate": "2023-02-11T10:04:57+01:00",
+            "page_label": "15",
+            "creator": "calibre 2.55.0 [http://calibre-ebook.com]",
+            "source": "D:\\projects\\rag-system\\llm\\data\\raw\\Explainable-AI-for-Practitioners.pdf",
+            "author": "Michael Munn & David Pitman",
+            "creationdate": "2023-02-11T09:02:57+00:00",
+            "total_pages": 74,
+            "start_index": 999,
+            "page": 14
+          },
+          "distance": 0.9326874613761902,
+          "is_relevant": true,
+          "selected_reason": "Directly supports the question or provides necessary, question-specific supporting evidence.",
+          "selection_rank": 5
+        }
+      ],
+      "review_instruction": "Contains only manually selected relevant chunks from the hybrid-search and similarity-search candidate sets. All included chunks are labeled is_relevant=true; no false or unreviewed candidates are included."
+    },
+    {
+      "question_id": 10,
+      "category": "Gradient-based Explainability",
+      "question": "How do gradient-based explainability techniques reveal the influence of model inputs?",
+      "answer": "Gradient-based techniques examine how a model's output changes with respect to its input features. A gradient indicates the direction of steepest increase in a function and provides information about local changes in the prediction when inputs change. Explainability methods use this information to estimate feature influence. For image models, the input can be varied along a path from a baseline image to the original image, allowing attribution values to be calculated for individual pixels and sometimes grouped into regions. These techniques are particularly useful for differentiable models but depend on access to gradients and appropriate methodological choices.",
+      "relevant_chunk_ids": [
+        "Explainable-AI-for-Practitioners_page_19_chunk_55",
+        "Explainable-AI-for-Practitioners_page_26_chunk_76",
+        "Explainable-AI-for-Practitioners_page_26_chunk_77",
+        "Explainable-AI-for-Practitioners_page_19_chunk_57",
+        "Explainable-AI-for-Practitioners_page_72_chunk_172"
+      ],
+      "candidate_chunks": [
+        {
+          "rank": 6,
+          "id": "Explainable-AI-for-Practitioners_page_19_chunk_55",
+          "text": "may change if the inputs change as well. This in turn, is very useful for explainability. The gradient\ncontains exactly the information we need to say “if the input changed this much in this way, the model’s\nprediction would change as well.” Many of the explainability techniques we discuss in this book are\nbased on evaluating how the value of predictions change as the values of features are changing as well.\nGradient based methods are particularly common for image based models (see Chapter 4) and they\nprovide an intuitive picture of how these methods are typically applied. Given some example input\nimage, to measure the gradient of how the model arrives at its prediction for that example, the image is\nvaried along a path in feature space from some baseline to the values of the original input image.\nBut what exactly is a path in feature space? For images, we can think of a picture that is 32 x 32 pixels,",
+          "metadata": {
+            "total_pages": 74,
+            "page": 19,
+            "page_label": "20",
+            "creationdate": "2023-02-11T09:02:57+00:00",
+            "producer": "3-Heights(TM) PDF Optimization Shell 5.9.1.5 (http://www.pdf-tools.com)",
+            "start_index": 0,
+            "title": "Explainable AI for Practitioners",
+            "moddate": "2023-02-11T10:04:57+01:00",
+            "creator": "calibre 2.55.0 [http://calibre-ebook.com]",
+            "author": "Michael Munn & David Pitman",
+            "source": "D:\\projects\\rag-system\\llm\\data\\raw\\Explainable-AI-for-Practitioners.pdf"
+          },
+          "distance": 0.5601629018783569,
+          "is_relevant": true,
+          "selected_reason": "Directly supports the question or provides necessary, question-specific supporting evidence.",
+          "selection_rank": 1
+        },
+        {
+          "rank": 10,
+          "id": "Explainable-AI-for-Practitioners_page_26_chunk_76",
+          "text": "gradient of a function tells us how the function values change when the inputs are changed slightly. For\njust one dimension, if the derivative is positive (or negative) that tells the function is increasing (or\ndecreasing) with respect to the input. Since the gradient is a vector of derivatives, the gradient tells us\nfor each input feature if the model function prediction will increase or decrease when you take a tiny\nstep in some direction of the feature space. The more the model prediction depends on a feature, the\nhigher the attribution value for that feature.\nNOTE\nFor linear models this relationship between gradients and attribution is even more explicit since the sign of a coefficient\nindicates exactly positive or negative relationship between the model output and the feature value. See also the discussion and\nexamples in the section on Gradient x Input in Chapter 5.\nHowever, relying on gradient information alone can be problematic. Gradients only give local",
+          "metadata": {
+            "source": "D:\\projects\\rag-system\\llm\\data\\raw\\Explainable-AI-for-Practitioners.pdf",
+            "start_index": 0,
+            "page": 26,
+            "creationdate": "2023-02-11T09:02:57+00:00",
+            "total_pages": 74,
+            "moddate": "2023-02-11T10:04:57+01:00",
+            "creator": "calibre 2.55.0 [http://calibre-ebook.com]",
+            "author": "Michael Munn & David Pitman",
+            "page_label": "27",
+            "title": "Explainable AI for Practitioners",
+            "producer": "3-Heights(TM) PDF Optimization Shell 5.9.1.5 (http://www.pdf-tools.com)"
+          },
+          "distance": 0.7119060754776001,
+          "is_relevant": true,
+          "selected_reason": "Directly supports the question or provides necessary, question-specific supporting evidence.",
+          "selection_rank": 2
+        },
+        {
+          "rank": 5,
+          "id": "Explainable-AI-for-Practitioners_page_26_chunk_77",
+          "text": "However, relying on gradient information alone can be problematic. Gradients only give local\ninformation about the model function behavior but this linear interpretation is limiting. Once the model\nis confident in its prediction, small changes in the inputs won’t make much difference. For example,\nwhen given an image of a cockatoo, if your model is robust and has a prediction score of 0.88,\nmodifying a few pixels slightly (even pixels that pertain to the cockatoo itself) likely won’t change the\nprediction score for that class, and thus the gradient will be zero. This is called gradient saturation.\nTo address this issue, the Integrated Gradients technique examines the model gradients along a path in\nfeature space, summing up the gradient contributions along the path. At a high level, Integrated\nGradients determine the salient inputs by gradually varying the network input from a baseline to the",
+          "metadata": {
+            "start_index": 885,
+            "creator": "calibre 2.55.0 [http://calibre-ebook.com]",
+            "page_label": "27",
+            "page": 26,
+            "title": "Explainable AI for Practitioners",
+            "source": "D:\\projects\\rag-system\\llm\\data\\raw\\Explainable-AI-for-Practitioners.pdf",
+            "moddate": "2023-02-11T10:04:57+01:00",
+            "author": "Michael Munn & David Pitman",
+            "total_pages": 74,
+            "producer": "3-Heights(TM) PDF Optimization Shell 5.9.1.5 (http://www.pdf-tools.com)",
+            "creationdate": "2023-02-11T09:02:57+00:00"
+          },
+          "distance": 0.7222206592559814,
+          "is_relevant": true,
+          "selected_reason": "Directly supports the question or provides necessary, question-specific supporting evidence.",
+          "selection_rank": 3
+        },
+        {
+          "rank": 2,
+          "id": "Explainable-AI-for-Practitioners_page_19_chunk_57",
+          "text": "attributions into regions. Gradient based techniques are also used for tabular (Chapter 3) and text\n(Chapter 5) models but the type of baseline you use for those cases will vary.\nIf this technique of determining attribution values sounds similar to the discussion of Shapley Values in\nthis chapter, and Sampled Shapley, which is covered in-depth in Chapter 3, that’s because it is! Both\nintegrated gradients and Shapley values are techniques that measure the individual influence of\nindividual features in the model and they do that by measuring how the model’s prediction changes as\nnew information of the input example is introduced. For Shapley values this is done combinatorially by\nadding features individually or in coalitions to determine which features or coalitions have the strongest\ninfluence in comparison to a baseline prediction. However, with images, this approach is a bit naive as it",
+          "metadata": {
+            "creationdate": "2023-02-11T09:02:57+00:00",
+            "author": "Michael Munn & David Pitman",
+            "start_index": 1883,
+            "creator": "calibre 2.55.0 [http://calibre-ebook.com]",
+            "page_label": "20",
+            "total_pages": 74,
+            "page": 19,
+            "moddate": "2023-02-11T10:04:57+01:00",
+            "source": "D:\\projects\\rag-system\\llm\\data\\raw\\Explainable-AI-for-Practitioners.pdf",
+            "title": "Explainable AI for Practitioners",
+            "producer": "3-Heights(TM) PDF Optimization Shell 5.9.1.5 (http://www.pdf-tools.com)"
+          },
+          "distance": null,
+          "is_relevant": true,
+          "selected_reason": "Directly supports the question or provides necessary, question-specific supporting evidence.",
+          "selection_rank": 4
+        },
+        {
+          "rank": 8,
+          "id": "Explainable-AI-for-Practitioners_page_72_chunk_172",
+          "text": "relevant to the model’s prediction by perturbing input pixel values. These methods use gradients of the\nmodel to create saliency maps (also called sensitivity maps or pixel attribution maps) to represent\nregions of an image that are particularly important for the model’s final classification. Lastly we\ndiscussed Guided Backpropagation and Guided Grad-CAM which combine different approaches.\nGuided Grad-CAM combines Guided Backprop and Grad-CAM using an element-wise product, getting\nthe best of both methods and addresses some of the problems that arise when using Grad-CAM.\nIn the next chapter, we’ll look into explainability techniques that are commonly used for text based\nmodels and how some of the techniques that we’ve already seen can be adapted to work in the domain\nof natural language.\n1 This is analogous to many loss-based functions for training DNNs that measure the gradient and performance change of the model\nin the loss space.",
+          "metadata": {
+            "title": "Explainable AI for Practitioners",
+            "total_pages": 74,
+            "creationdate": "2023-02-11T09:02:57+00:00",
+            "author": "Michael Munn & David Pitman",
+            "start_index": 0,
+            "moddate": "2023-02-11T10:04:57+01:00",
+            "creator": "calibre 2.55.0 [http://calibre-ebook.com]",
+            "source": "D:\\projects\\rag-system\\llm\\data\\raw\\Explainable-AI-for-Practitioners.pdf",
+            "producer": "3-Heights(TM) PDF Optimization Shell 5.9.1.5 (http://www.pdf-tools.com)",
+            "page_label": "73",
+            "page": 72
+          },
+          "distance": 0.7667849659919739,
+          "is_relevant": true,
+          "selected_reason": "Directly supports the question or provides necessary, question-specific supporting evidence.",
+          "selection_rank": 5
+        }
+      ],
+      "review_instruction": "Contains only manually selected relevant chunks from the hybrid-search and similarity-search candidate sets. All included chunks are labeled is_relevant=true; no false or unreviewed candidates are included."
+    }
+  ]
+}
